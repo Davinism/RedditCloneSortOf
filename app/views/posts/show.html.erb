@@ -1,0 +1,8 @@
+<h2><%= @post.title %></h2>
+
+<section>
+<%= @post.content %>
+<%= @post.url %>
+</section>
+
+<%= link_to "Edit #{@post.title }?", edit_sub_post_url, method: :get %>

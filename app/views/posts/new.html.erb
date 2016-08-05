@@ -1,0 +1,16 @@
+<form action="<%=sub_posts_url%>" method="post">
+  <label> Title:
+    <input type="text" name="post[title]"/>
+  </label>
+
+  <label> Content:
+    <input type="text" name="post[content]"/>
+  </label>
+
+  <label> Link's Url:
+    <input type="text" name="post[url]"/>
+  </label>
+
+  <%= button_to "Create Post!", sub_posts_url, method: :post %>
+
+</form>

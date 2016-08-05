@@ -1,0 +1,11 @@
+<form action="/session" method="post">
+  <label> Username:
+    <input type="text" name="user[username]"/>
+  </label>
+  <label> Password:
+    <input type="text" name="user[password]"/>
+  </label>
+
+  <%= button_to "Sign In", session_url, method: :post %>
+
+</form>

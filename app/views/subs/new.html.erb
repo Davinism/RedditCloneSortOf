@@ -1,0 +1,11 @@
+<form action="/subs" method="post">
+  <label> Title:
+    <input type="text" name="sub[title]"/>
+  </label>
+  <label> Description:
+    <input type="text" name="sub[description]"/>
+  </label>
+
+  <%= button_to "Create Sub!", subs_url, method: :post %>
+
+</form>

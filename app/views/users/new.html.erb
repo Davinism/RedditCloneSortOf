@@ -1,0 +1,11 @@
+<form action="/users" method="post">
+  <label> Username:
+    <input type="text" name="user[username]"/>
+  </label>
+  <label> Password:
+    <input type="text" name="user[password]"/>
+  </label>
+
+  <%= button_to "Submit", users_url, method: :post %>
+
+</form>

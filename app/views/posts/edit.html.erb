@@ -1,0 +1,16 @@
+<form action="<%= sub_post_url(id: @post.id) %>" method="post">
+<%= auth_token %>
+  <input type="hidden" name="_method" value="patch" />
+  <h2> <%= "Edit #{@post.title}'s content/URL:"  %></h2>
+
+  <label> Content:
+    <input type="text" name="post[content]"/>
+  </label>
+
+  <label> URL:
+    <input type="text" name="post[content]"/>
+  </label>
+
+  <input type="submit" value="Update Post!" />
+
+</form>

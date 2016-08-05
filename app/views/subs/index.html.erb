@@ -1,0 +1,11 @@
+<h2>The Subtopics Are:</h2>
+
+<ul>
+  <% @subs.each do |subtopic| %>
+    <li>
+      <%=  link_to subtopic.title, sub_url(subtopic), method: :get%>
+      <br />
+      <%=  subtopic.description %>
+    </li>
+  <% end  %>
+</ul>
