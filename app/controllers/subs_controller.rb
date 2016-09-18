@@ -63,8 +63,8 @@ class SubsController < ApplicationController
 
   def check_if_moderator
     @sub = Sub.find(params[:id])
-    unless current_user.id == @sub.user_id
-      redirect_to sub_url(@sub)
+    if current_user.nil? || !(current_user.id == @sub.user_id)
+      redirect_to new_session_url
     end
   end
 

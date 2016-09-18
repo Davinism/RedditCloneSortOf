@@ -1,4 +1,4 @@
-<form action="<%= sub_post_url(id: @post.id) %>" method="post">
+<form action="<%= post_url(id: @post.id) %>" method="post">
 <%= auth_token %>
   <input type="hidden" name="_method" value="patch" />
   <h2> <%= "Edit #{@post.title}'s content/URL:"  %></h2>
@@ -10,6 +10,19 @@
   <label> URL:
     <input type="text" name="post[content]"/>
   </label>
+
+  <label>Subs</label>
+
+ <input type="hidden" name="post[sub_ids][]" value="">
+
+ <% Sub.all.each do |sb| %>
+   <label><%= sb.title %>
+     <input type="checkbox"
+             value="<%= sb.id %>"
+             name="post[sub_ids][]"
+             <%= "checked" if @post.subs.include?(sb) %>>
+   </label>
+ <% end %>
 
   <input type="submit" value="Update Post!" />
 

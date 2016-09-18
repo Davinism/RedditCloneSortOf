@@ -1,4 +1,5 @@
-<form action="<%=sub_posts_url%>" method="post">
+<form action="<%=posts_url%>" method="post">
+  <%= auth_token %>
   <label> Title:
     <input type="text" name="post[title]"/>
   </label>
@@ -11,6 +12,19 @@
     <input type="text" name="post[url]"/>
   </label>
 
-  <%= button_to "Create Post!", sub_posts_url, method: :post %>
+  <label>Subs</label>
+
+ <input type="hidden" name="post[sub_ids][]" value="">
+
+ <% Sub.all.each do |sb| %>
+   <label><%= sb.title %>
+     <input type="checkbox"
+             value="<%= sb.id %>"
+             name="post[sub_ids][]"
+             <%= "checked" if @post.subs.include?(sb) %>>
+   </label>
+ <% end %>
+
+  <%= button_to "Create Post!", posts_url, method: :post %>
 
 </form>

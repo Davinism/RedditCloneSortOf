@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'bcrypt'
+gem 'bcrypt', require: 'bcrypt'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -35,6 +37,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+end
+
+group :test do
+  gem 'factory_girl_rails', :require => false
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :development do

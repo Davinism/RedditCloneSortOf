@@ -1,5 +1,9 @@
 <h2>The Subtopics Are:</h2>
 
+<section>
+  <%= link_to "Create New Sub!", new_sub_url, method: :get %>
+</section>
+
 <ul>
   <% @subs.each do |subtopic| %>
     <li>
